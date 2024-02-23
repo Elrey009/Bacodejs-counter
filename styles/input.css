@@ -1,0 +1,295 @@
+:root {
+  --counter-transition: 0.5s linear;
+  --text-black: #000000;
+  --text-white: #ffffff;
+  --bg-white: #ffffff;
+  --bg-black: #000000;
+  --border-green: #008000;
+  --btn-red: #ff0000;
+  --input-border: gray;
+  --border-blue: #39f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: 1px solid red; */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-black);
+}
+
+.container {
+  min-width: 80vw;
+  min-height: 100dvh;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  padding-block: 1.5rem;
+}
+.theme-btn {
+  width: 2rem;
+  height: 2rem;
+  border: 1px dotted var(--text-black);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+  transform: translateY(-5px);
+}
+
+.theme-color {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 4px;
+  border-radius: 50%;
+  background-color: var(--text-black);
+}
+
+.main-container {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid var(--text-black);
+  border-radius: 50%;
+  bottom: 2rem;
+  left: 28rem;
+}
+
+.display-container {
+  min-width: 8rem;
+  height: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  font-size: 10rem;
+  overflow: hidden;
+}
+
+.repeat-display {
+  width: 5rem;
+  height: 5rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 19rem;
+  border: 2px solid var(--bg-black);
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--border-green);
+}
+
+.hr {
+  position: absolute;
+  width: 100%;
+  border: 1px solid var(--text-black);
+}
+
+section:nth-of-type(2) {
+  width: 18rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1rem;
+  min-height: 2.5rem;
+  background-color: var(--btn-red);
+  padding: 5px;
+  border-radius: 13px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--bg-white);
+  cursor: pointer;
+  position: absolute;
+  top: -1rem;
+}
+
+.button-div {
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+  /* position: relative; */
+}
+
+.btn {
+  all: unset;
+  width: 20%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid var(--border-green);
+  padding-inline: 2rem;
+  cursor: pointer;
+  background-color: var(--bg-white);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.input-container {
+  all: unset;
+  position: absolute;
+  background-color: var(--bg-white);
+  right: 3rem;
+  bottom: 6.5rem;
+  width: 6.5rem;
+  height: 2.3rem;
+  border: 1px solid var(--input-border);
+  padding: 5px;
+}
+
+/* ::placeholder {
+  color: var(--text-black);
+} */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  margin-left: 2rem;
+}
+
+@keyframes rotateContainer {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.btn.bounce-in {
+  animation: bounceIn 0.5s;
+}
+
+.btn.bounce-out {
+  animation: bounceOut 0.5s;
+}
+
+/* @keyframes bounceUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+} */
+
+@media screen and (min-width: 300px) and (max-width: 1000px) {
+  .container {
+    min-width: 100vw;
+    min-height: 80dvh;
+  }
+  .main-container {
+    width: 22rem;
+    height: 22rem;
+    top: 6rem;
+    left: 1.5rem;
+  }
+
+  .display-container {
+    font-size: 7rem;
+  }
+
+  .reset {
+    min-width: 1rem;
+    min-height: 1rem;
+    border-radius: 10px;
+    font-size: 18px;
+    top: 0.5rem;
+  }
+
+  .button-div {
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .btn {
+    all: unset;
+    width: 1.5rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid var(--border-green);
+    padding-inline: 2rem;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .repeat-display {
+    width: 4rem;
+    height: 4rem;
+    right: 6rem;
+    top: 6rem;
+  }
+
+  .input-container {
+    right: 2rem;
+    bottom: 5rem;
+    width: 6rem;
+    height: 2rem;
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 15rem;
+  }
+}
